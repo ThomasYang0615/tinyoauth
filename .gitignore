@@ -1,0 +1,26 @@
+# OS / tooling
+.DS_Store
+__pycache__/
+*.pyc
+
+# Real env files (ignored)
+.env
+.env.*
+*.env
+
+# Keep example templates
+!.env.example
+!**/.env.example
+
+# Keys / certs
+*.pem
+*.key
+*.crt
+
+# Node / Python caches (if you add a frontend later)
+node_modules/
+.dist/
+.build/
+
+# Optional: editor swap files, temp
+*~
