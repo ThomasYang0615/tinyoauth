@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  auth:
+    build: ./auth
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./auth:/app
+    working_dir: /app
+
+  resource:
+    build: ./resource
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./auth:/app
+    working_dir: /app
+    depends_on:
+      - auth
