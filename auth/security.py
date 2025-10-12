@@ -1,6 +1,6 @@
 import base64, hashlib, json, time, uuid
 from typing import Dict, Any
-from jose import JWTError
+from jose import jwt
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 
