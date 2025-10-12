@@ -1,4 +1,4 @@
-import base64, hashllib, json, time, uuid
+import base64, hashlib, json, time, uuid
 from typing import Dict, Any
 from jose import JWTError
 from cryptography.hazmat.primitives.asymmetric import rsa
