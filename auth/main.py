@@ -120,3 +120,7 @@ async def token(tr: TokenRequest):
     }
     at = sign_jwt(claims, issuer=settings.ISSUER)
     return TokenResponse(access_token=at, expires_in=settings.ACCESS_TOKEN_TTL_SECONDS, scope=scope)
+
+@app.get("/health", tags=["infra"])
+def health():
+    return {"status":"ok"}

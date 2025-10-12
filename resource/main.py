@@ -66,3 +66,7 @@ async def add_note(note: str, authorization: Optional[str] = Header(None)):
     user = claims["sub"]
     NOTES.setdefault(user, []).append(note)
     return {"ok": True}
+
+@app.get("/health", tags=["infra"])
+def health():
+    return {"status":"ok"}
