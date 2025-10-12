@@ -87,7 +87,7 @@ async def authorize(request: Request):
 
 @app.post("/token", response_model=TokenResponse)
 async def token(tr: TokenRequest):
-    if tr.grean_type != "authorization_code":
+    if tr.grant_type != "authorization_code":
         raise HTTPException(400, detail="unsupported_grant_type")
     
     item = AUTHCODES.get(tr.code)
